@@ -19,6 +19,9 @@ sap.ui.define([
             },
             callBackFunction: function(a,b){
 
+            },
+            onAlertPress: function(){
+                alert("Good, Keep on reading. You are doing great!!");
             }
         });
     });
