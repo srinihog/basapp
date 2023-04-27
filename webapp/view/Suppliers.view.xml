@@ -3,13 +3,47 @@
     xmlns="sap.m">
     <Page id="page" title="{i18n>title}">
         <content>
-        <Button press="onButtonPress" text="Press me"/>
-        <Button press="onAlertPress" text="Do you want to alert!"></Button>
-         <List noDataText="Drop list items here" id="list0" items="{/BusinessPartnerSet}">
+        <Button id="idSampleButton" press="onButtonPress" text="Press me"/>
+        <Button id="idAlertButton" press="onAlertPress" text="Do you want to alert!"></Button>
+         <!-- <List noDataText="Drop list items here" id="list0" items="{/BusinessPartnerSet}">
            <items>
              <StandardListItem type="Navigation" title="{CompanyName}" description="Desciption Text{WebAddress}" icon="sap-icon://picture" id="item0"/>
            </items>
-         </List>
+         </List> -->
+         <Table id="idBusinessPartners" items="{/SalesOrderSet}">
+           <columns>
+             <Column id="idSalesId">
+               <Text id="idSalesIdText" text="Sa. Ord. ID"/>
+             </Column>
+              <Column id="idNote">
+               <Text id="idNoteText" text="Description"/>
+             </Column>
+              <Column id="idCustName">
+               <Text id="idCustNameText" text="Company Name"/>
+             </Column>
+              <Column id="idGrossAmt">
+               <Text id="idGrossAmtText" text="Gross Amt."/>
+             </Column>
+              <Column id="idBillStat">
+               <Text id="idBillStatText" text="Billing Description"/>
+             </Column>
+              <Column id="idDelStat">
+               <Text id="idDelStatText" text="Delivery Description"/>
+             </Column>
+           </columns>
+           <items>
+             <ColumnListItem id="idClmListItemSales">
+               <cells>
+                 <Text id="salesIDval" text="{SalesOrderID}"/>
+                  <Text id="noteVal" text="{Note}"/>
+                   <Text id="custVal" text="{CustomerName}"/>
+                    <Text id="grossVal" text="{GrossAmount}"/>
+                     <Text id="billStat" text="{BillingStatusDescription}"/>
+                      <Text id="delStat" text="{DeliveryStatusDescription}"/>
+               </cells>
+             </ColumnListItem>
+           </items>
+         </Table>
         </content>
     </Page>
 </mvc:View>
