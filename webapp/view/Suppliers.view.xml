@@ -10,12 +10,21 @@
              <StandardListItem type="Navigation" title="{CompanyName}" description="Desciption Text{WebAddress}" icon="sap-icon://picture" id="item0"/>
            </items>
          </List> -->
-         <Table id="idBusinessPartners" items="{/SalesOrderSet}">
+         <Table id="idBusinessPartners" items="{/SalesOrderSet}" alternateRowColors="false" mode="MultiSelect"
+         multiSelectMode="SelectAll" sticky="ColumnHeaders" selectionChange="onTabSelectionChange">
+         <headerToolbar>
+           <Toolbar id="idSalesTabHeader">
+             <ToolbarSpacer/>
+             <Button id="idAdd" press="onAddRow" text="Add a Row" icon="sap-icon://add"/>
+             <Button id="idEdit" text="Edit Selected Row" press="onEditRow" icon="sap-icon://edit"/>
+             <Button id="idDelete" text="Delete Selected Row" press="onDeleteRow" icon="sap-icon://delete"/>
+           </Toolbar>
+         </headerToolbar>
            <columns>
              <Column id="idSalesId">
                <Text id="idSalesIdText" text="Sa. Ord. ID"/>
              </Column>
-              <Column id="idNote">
+              <Column id="idNote" demandPopin="true" minScreenWidth="Tablet">
                <Text id="idNoteText" text="Description"/>
              </Column>
               <Column id="idCustName">

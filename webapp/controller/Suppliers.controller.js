@@ -22,6 +22,9 @@ sap.ui.define([
             },
             onAlertPress: function(){
                 alert("Good, Keep on reading. You are doing great!!");
+            },
+            onTabSelectionChange: function(oEvent){
+                alert(oEvent.getParameter("selected"));
             }
         });
     });
